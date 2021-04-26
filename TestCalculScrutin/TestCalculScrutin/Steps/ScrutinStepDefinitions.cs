@@ -1,6 +1,7 @@
 ﻿using CalculScrutinLibrary;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
+using System.Linq;
 using FluentAssertions;
 
 namespace TestCalculScrutin.Steps
@@ -38,6 +39,12 @@ namespace TestCalculScrutin.Steps
             this._calculScrutin.AjoutVote(candidat);
         }
 
+        [Given(@"le tour de scrutin est ouvert")]
+        public void GivenLeScrutinEstOuvert()
+        {
+            this._calculScrutin.OuvertureDuScrutin();
+        }
+
         [When(@"le scrutin est clôturé")]
         public void WhenLeScrutinEstCloture()
         {
@@ -48,6 +55,12 @@ namespace TestCalculScrutin.Steps
         public void ThenLeResultatEstValide()
         {
             this._calculScrutin.Vainqueur.Should().NotBeNull();
+        }
+
+        [Then(@"le résultat n'est pas valide")]
+        public void ThenLeResultatNestPasValide()
+        {
+            this._calculScrutin.Vainqueur.Should().BeNull();
         }
 
         [Then(@"""(.*)"" est désigné comme vainqueur")]
@@ -62,8 +75,25 @@ namespace TestCalculScrutin.Steps
             foreach (TableRow row in table.Rows)
             {
                 string nom = row["Nom"];
-                this._calculScrutin.Candidats[nom].Pourcentage.Should().Be(double.Parse(row["pourcentage"]));
-                this._calculScrutin.Candidats[nom].NbVotes.Should().Be(int.Parse(row["Nombre de vote"]));
+                ResultatIndividuel resultat = this._calculScrutin.Resultats.Single(_ => _.Nom == nom);
+                resultat.Pourcentage.Should().Be(double.Parse(row["pourcentage"]));
+                resultat.NbVotes.Should().Be(int.Parse(row["Nombre de vote"]));
+            }
+        }
+
+        [Then(@"un second tour de scrutin est possible")]
+        public void ThenUnSecondTourDeScrutinEstPossible()
+        {
+            this._calculScrutin.EnAttenteProchainTour.Should().BeTrue();
+        }
+
+        [Then(@"les candidats suivants sont qualifiés")]
+        public void ThenLesCandidatsSuivantsSontQualifies(Table table)
+        {
+            this._calculScrutin.Candidats.Count.Should().Be(table.RowCount);
+            foreach (TableRow row in table.Rows)
+            {
+                this._calculScrutin.Candidats.Should().Contain(row[0]);
             }
         }
     }

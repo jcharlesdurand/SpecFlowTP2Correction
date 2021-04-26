@@ -4,9 +4,9 @@ using System.Text;
 
 namespace CalculScrutinLibrary
 {
-    public class Candidat
+    public class ResultatIndividuel
     {
-        public Candidat(string nom)
+        public ResultatIndividuel(string nom)
         {
             this.Nom = nom;
             this.NbVotes = 0;
@@ -15,12 +15,12 @@ namespace CalculScrutinLibrary
 
         internal void AjoutUnVote()
         {
-            this.NbVotes =+ 1;
+            this.NbVotes += 1;
         }
 
         internal void CalculPourcentage(int nbDeVotesTotal)
         {
-            this.Pourcentage = (this.NbVotes / nbDeVotesTotal) * 100;
+            this.Pourcentage = (this.NbVotes / (double)nbDeVotesTotal) * 100.0;
         }
 
         public string Nom { get; private set; }
