@@ -51,14 +51,14 @@ namespace TestCalculScrutin.Steps
             this._calculScrutin.ClotureDuVote();
         }
 
-        [Then(@"le résultat est valide")]
-        public void ThenLeResultatEstValide()
+        [Then(@"il y a un vainqueur")]
+        public void ThenIlYAUnVainqueur()
         {
             this._calculScrutin.Vainqueur.Should().NotBeNull();
         }
 
-        [Then(@"le résultat n'est pas valide")]
-        public void ThenLeResultatNestPasValide()
+        [Then(@"il n'y a pas de vainqueur")]
+        public void ThenIlNyAPasDeVainqueur()
         {
             this._calculScrutin.Vainqueur.Should().BeNull();
         }
