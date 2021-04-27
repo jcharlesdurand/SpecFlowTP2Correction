@@ -44,7 +44,7 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 1 | 1              | 50          |
 	| candidat 2 | 0              | 0           |
 	| candidat 3 | 1              | 50          |
-	And un second tour de scrutin est possible
+	And un autre tour de scrutin est possible
 	And les candidats suivants sont qualifiés
 	| Nom        | 
 	| candidat 1 | 
@@ -78,7 +78,7 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 1 | 1              | 50          |
 	| candidat 2 | 0              | 0           |
 	| candidat 3 | 1              | 50          |
-	And un second tour de scrutin est possible
+	And un autre tour de scrutin est possible
 	And les candidats suivants sont qualifiés
 	| Nom        | 
 	| candidat 1 | 
@@ -92,3 +92,4 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 1 | 1              | 50          |
 	| candidat 3 | 1              | 50          |
 	And il n'y a pas de vainqueur
+	And un autre tour de scrutin n'est pas possible

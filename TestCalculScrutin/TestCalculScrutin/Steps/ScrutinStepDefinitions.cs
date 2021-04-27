@@ -81,10 +81,16 @@ namespace TestCalculScrutin.Steps
             }
         }
 
-        [Then(@"un second tour de scrutin est possible")]
-        public void ThenUnSecondTourDeScrutinEstPossible()
+        [Then(@"un autre tour de scrutin est possible")]
+        public void ThenUnAutreTourDeScrutinEstPossible()
         {
             this._calculScrutin.EnAttenteProchainTour.Should().BeTrue();
+        }
+
+        [Then(@"un autre tour de scrutin n'est pas possible")]
+        public void ThenUnAutreTourDeScrutinNEstPasPossible()
+        {
+            this._calculScrutin.EnAttenteProchainTour.Should().BeFalse();
         }
 
         [Then(@"les candidats suivants sont qualifiés")]

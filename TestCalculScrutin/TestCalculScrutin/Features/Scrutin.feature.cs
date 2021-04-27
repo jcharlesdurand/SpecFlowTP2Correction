@@ -233,7 +233,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table4, "And ");
 #line hidden
 #line 47
- testRunner.And("un second tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("un autre tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom"});
@@ -361,7 +361,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table8, "And ");
 #line hidden
 #line 81
- testRunner.And("un second tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("un autre tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom"});
@@ -401,6 +401,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 94
  testRunner.And("il n\'y a pas de vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 95
+ testRunner.And("un autre tour de scrutin n\'est pas possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
