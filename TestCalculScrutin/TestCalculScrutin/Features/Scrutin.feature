@@ -11,13 +11,18 @@
 	- Sur le dernier tour de scrutin, le vainqueur est le candidat ayant le pourcentage de vote le plus élevé
 	- Si on a une égalité sur un dernier tour, on ne peut pas déterminer de vainqueur
 
-
+	Evolution
+	- Gestion des égalités sur le 2ème et 3ème candidat sur un premier tour
+		- Règle métier choisie: en cas d'égalité au premier tour, le candidat le plus âgé est qualifié au deuxièeme tour
+	- Gestion du vote blanc
+		- Règle métier choisie: les votes blancs ou nuls ne sont pas comptabilisés dans les suffrages exprimés
+								, mais ils sont décomptés à part et on veut pouvoir en connaître le nombre pour chaque tour 
 
  Scenario: Scrutin majoritaire un électeur et un vainqueur
 	Given les candidats suivants
-	| Nom        |
-	| candidat 1 |
-	| candidat 2 |
+	| Nom        | DateDeNaissance |
+	| candidat 1 | Jan 1, 1999     |
+	| candidat 2 | Jun 15, 1995    |
 	And le tour de scrutin est ouvert
 	And le vote d'un electeur est "candidat 1"
 	When le scrutin est clôturé
@@ -30,20 +35,27 @@
 
 Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et vainqueur au second tour
 	Given les candidats suivants
-	| Nom        |
-	| candidat 1 |
-	| candidat 2 |
-	| candidat 3 |
+		| Nom        | DateDeNaissance |
+		| candidat 1 | Jan 1, 1999     |
+		| candidat 2 | Jun 15, 1995    |
+		| candidat 3 | Jan 2, 1999     |
 	And le tour de scrutin est ouvert
 	And le vote d'un electeur est "candidat 1"
+	And le vote d'un electeur est "candidat 1"
+	And le vote d'un electeur est "candidat 1"
+	And le vote d'un electeur est "candidat 1"
 	And le vote d'un electeur est "candidat 3"
+	And le vote d'un electeur est "candidat 3"
+	And le vote d'un electeur est "candidat 3"
+	And le vote d'un electeur est "candidat 2"
+	And le vote d'un electeur est "candidat 2"
 	When le scrutin est clôturé
 	Then il n'y a pas de vainqueur
 	And le résultat du scrutin est le suivant
-	| Nom        | Nombre de vote | pourcentage |
-	| candidat 1 | 1              | 50          |
-	| candidat 2 | 0              | 0           |
-	| candidat 3 | 1              | 50          |
+	| Nom        | Nombre de vote | pourcentage       |
+	| candidat 1 | 4              | 44.44444444444444 |
+	| candidat 2 | 2              | 22.22222222222222 |
+	| candidat 3 | 3              | 33.33333333333333 |
 	And un autre tour de scrutin est possible
 	And les candidats suivants sont qualifiés
 	| Nom        | 
@@ -64,10 +76,10 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 
 Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et pas de vainqueur au second tour
 	Given les candidats suivants
-	| Nom        |
-	| candidat 1 |
-	| candidat 2 |
-	| candidat 3 |
+		| Nom        | DateDeNaissance |
+		| candidat 1 | Jan 1, 1999     |
+		| candidat 2 | Jun 15, 1995    |
+		| candidat 3 | Jan 2, 1999     |
 	And le tour de scrutin est ouvert
 	And le vote d'un electeur est "candidat 1"
 	And le vote d'un electeur est "candidat 3"
@@ -93,3 +105,30 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 3 | 1              | 50          |
 	And il n'y a pas de vainqueur
 	And un autre tour de scrutin n'est pas possible
+
+	Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité sur les 2eme et 3eme candidat
+	Given les candidats suivants
+	| Nom        | DateDeNaissance |
+	| candidat 1 | Jan 1, 1999     |
+	| candidat 2 | Jun 15, 1995    |
+	| candidat 3 | Jan 2, 1999     |
+	And le tour de scrutin est ouvert
+	And le vote d'un electeur est "candidat 1"
+	And le vote d'un electeur est "candidat 1"
+	And le vote d'un electeur est "candidat 3"
+	And le vote d'un electeur est "candidat 3"
+	And le vote d'un electeur est "candidat 2"
+	And le vote d'un electeur est "candidat 2"
+	And le vote d'un electeur est "candidat 2"
+	When le scrutin est clôturé
+	Then il n'y a pas de vainqueur
+	And le résultat du scrutin est le suivant
+	| Nom        | Nombre de vote | pourcentage        |
+	| candidat 1 | 2              | 28.57142857142857  |
+	| candidat 2 | 3              | 42.857142857142854 |
+	| candidat 3 | 2              | 28.57142857142857  |
+	And un autre tour de scrutin est possible
+	And les candidats suivants sont qualifiés
+	| Nom        | 
+	| candidat 1 | 
+	| candidat 2 | 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using System.Linq;
 using FluentAssertions;
+using System;
 
 namespace TestCalculScrutin.Steps
 {
@@ -24,10 +25,10 @@ namespace TestCalculScrutin.Steps
         [Given(@"les candidats suivants")]
         public void GivenLesCandidatsSuivants(Table table)
         {
-            List<string> candidats = new List<string>();
+            List<Candidat> candidats = new List<Candidat>();
             foreach (TableRow row in table.Rows)
             {
-                candidats.Add(row[0]);
+                candidats.Add(new Candidat(row[0], DateTime.Parse(row[1])));
             }
 
             this._calculScrutin = new CalculScrutin(candidats);
@@ -66,7 +67,7 @@ namespace TestCalculScrutin.Steps
         [Then(@"""(.*)"" est désigné comme vainqueur")]
         public void ThenEstDesigneCommeVainqueur(string candidat)
         {
-            this._calculScrutin.Vainqueur.Nom.Should().Be(candidat);            
+            this._calculScrutin.Vainqueur.Candidat.Nom.Should().Be(candidat);            
         }
 
         [Then(@"le résultat du scrutin est le suivant")]
@@ -75,7 +76,7 @@ namespace TestCalculScrutin.Steps
             foreach (TableRow row in table.Rows)
             {
                 string nom = row["Nom"];
-                ResultatIndividuel resultat = this._calculScrutin.Resultats.Single(_ => _.Nom == nom);
+                ResultatIndividuel resultat = this._calculScrutin.Resultats.Single(_ => _.Candidat.Nom == nom);
                 resultat.Pourcentage.Should().Be(double.Parse(row["pourcentage"]));
                 resultat.NbVotes.Should().Be(int.Parse(row["Nombre de vote"]));
             }
@@ -99,7 +100,7 @@ namespace TestCalculScrutin.Steps
             this._calculScrutin.Candidats.Count.Should().Be(table.RowCount);
             foreach (TableRow row in table.Rows)
             {
-                this._calculScrutin.Candidats.Should().Contain(row[0]);
+                this._calculScrutin.Candidats.SingleOrDefault(_ => _.Nom == row[0]);
             }
         }
     }

@@ -6,9 +6,9 @@ namespace CalculScrutinLibrary
 {
     public class ResultatIndividuel
     {
-        public ResultatIndividuel(string nom)
+        public ResultatIndividuel(Candidat candidat)
         {
-            this.Nom = nom;
+            this.Candidat = candidat;
             this.NbVotes = 0;
             this.Pourcentage = 0.0;
         }
@@ -23,7 +23,7 @@ namespace CalculScrutinLibrary
             this.Pourcentage = (this.NbVotes / (double)nbDeVotesTotal) * 100.0;
         }
 
-        public string Nom { get; private set; }
+        public Candidat Candidat { get; private set; }
         public int NbVotes { get; private set; }
         public double Pourcentage { get; private set; }
     }

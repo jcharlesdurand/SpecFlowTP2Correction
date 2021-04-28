@@ -10,9 +10,9 @@ namespace CalculScrutinLibrary
         private int _nombreDeVotesTotal;
         private int _tourDeScrutin;
         
-        public CalculScrutin(List<string> candidats)
+        public CalculScrutin(List<Candidat> candidats)
         {
-            this.Candidats = new List<string>(candidats);
+            this.Candidats = new List<Candidat>(candidats);
             _tourDeScrutin = 0;
             this.EnAttenteProchainTour = true;
         }
@@ -21,14 +21,14 @@ namespace CalculScrutinLibrary
   
         public List<ResultatIndividuel> Resultats { get; private set; }
 
-        public List<string> Candidats{ get; private set; }
+        public List<Candidat> Candidats{ get; private set; }
         public bool EnAttenteProchainTour { get; private set; }
 
         public void AjoutVote(string candidat)
         {
             if (this._scrutinOuvert)
             {
-                this.Resultats.Single(_ => _.Nom == candidat).AjoutUnVote();
+                this.Resultats.Single(_ => _.Candidat.Nom == candidat).AjoutUnVote();
                 this._nombreDeVotesTotal += 1;
             }
         }
@@ -68,7 +68,7 @@ namespace CalculScrutinLibrary
             if (this.Vainqueur == null && this._tourDeScrutin == 1)
             {
                 this.EnAttenteProchainTour = true;
-                this.Candidats = this.Resultats.OrderBy(_ => _.Pourcentage).TakeLast(2).Select(_ => _.Nom).ToList();
+                this.Candidats = this.Resultats.OrderBy(_ => _.Pourcentage).TakeLast(2).Select(_ => _.Candidat).ToList();
             }
             else
             {
