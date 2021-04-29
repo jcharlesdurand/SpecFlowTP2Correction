@@ -21,6 +21,8 @@ namespace CalculScrutinLibrary
   
         public List<ResultatIndividuel> Resultats { get; private set; }
 
+        public int VotesBlancsOuNuls { get; private set; }
+
         public List<Candidat> Candidats{ get; private set; }
         public bool EnAttenteProchainTour { get; private set; }
 
@@ -28,8 +30,16 @@ namespace CalculScrutinLibrary
         {
             if (this._scrutinOuvert)
             {
-                this.Resultats.Single(_ => _.Candidat.Nom == candidat).AjoutUnVote();
-                this._nombreDeVotesTotal += 1;
+                ResultatIndividuel resultat = this.Resultats.SingleOrDefault(_ => _.Candidat.Nom == candidat);
+                if (resultat != null)
+                {
+                    resultat.AjoutUnVote();
+                    this._nombreDeVotesTotal += 1;
+                }
+                else
+                {
+                    this.VotesBlancsOuNuls += 1;
+                }
             }
         }
 
@@ -47,8 +57,9 @@ namespace CalculScrutinLibrary
             {
                 this.Resultats.Add(new ResultatIndividuel(candidat));
             }
-
+            
             this._nombreDeVotesTotal = 0;
+            this.VotesBlancsOuNuls = 0;
             this._scrutinOuvert = true;
         }
 

@@ -562,6 +562,89 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire un électeur et un vainqueur, gestion des votes blancs ou nuls" +
+            "", SourceLine=135)]
+        public virtual void ScrutinMajoritaireUnElecteurEtUnVainqueurGestionDesVotesBlancsOuNuls()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire un électeur et un vainqueur, gestion des votes blancs ou nuls" +
+                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 136
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "DateDeNaissance"});
+                table14.AddRow(new string[] {
+                            "candidat 1",
+                            "Jan 1, 1999"});
+                table14.AddRow(new string[] {
+                            "candidat 2",
+                            "Jun 15, 1995"});
+#line 137
+ testRunner.Given("les candidats suivants", ((string)(null)), table14, "Given ");
+#line hidden
+#line 141
+ testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 142
+ testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 143
+ testRunner.And("le vote d\'un electeur est \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 144
+ testRunner.And("le vote d\'un electeur est \"adcve\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 145
+ testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 146
+ testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 147
+ testRunner.And("\"candidat 1\" est désigné comme vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote",
+                            "pourcentage"});
+                table15.AddRow(new string[] {
+                            "candidat 1",
+                            "1",
+                            "100"});
+                table15.AddRow(new string[] {
+                            "candidat 2",
+                            "0",
+                            "0"});
+#line 148
+ testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table15, "And ");
+#line hidden
+#line 152
+ testRunner.And("il y a 2 votes blancs ou nuls", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

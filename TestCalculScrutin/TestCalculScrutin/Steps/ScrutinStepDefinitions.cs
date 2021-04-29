@@ -103,5 +103,11 @@ namespace TestCalculScrutin.Steps
                 this._calculScrutin.Candidats.SingleOrDefault(_ => _.Nom == row[0]);
             }
         }
+
+        [Then(@"il y a (.*) votes blancs ou nuls")]
+        public void ThenIlYAVotesBlancsOuNuls(int nombreDeVotesBlancsOuNuls)
+        {
+            this._calculScrutin.VotesBlancsOuNuls.Should().Be(nombreDeVotesBlancsOuNuls);
+        }
     }
 }

@@ -132,3 +132,21 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| Nom        | 
 	| candidat 1 | 
 	| candidat 2 | 
+
+Scenario: Scrutin majoritaire un électeur et un vainqueur, gestion des votes blancs ou nuls
+	Given les candidats suivants
+	| Nom        | DateDeNaissance |
+	| candidat 1 | Jan 1, 1999     |
+	| candidat 2 | Jun 15, 1995    |
+	And le tour de scrutin est ouvert
+	And le vote d'un electeur est "candidat 1"
+	And le vote d'un electeur est ""
+	And le vote d'un electeur est "adcve"
+	When le scrutin est clôturé
+	Then il y a un vainqueur
+	And "candidat 1" est désigné comme vainqueur
+	And le résultat du scrutin est le suivant
+	| Nom            | Nombre de vote | pourcentage |
+	| candidat 1     | 1              | 100         |
+	| candidat 2     | 0              | 0           |
+	And il y a 2 votes blancs ou nuls
