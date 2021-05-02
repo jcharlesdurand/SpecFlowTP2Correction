@@ -7,6 +7,6 @@
   },
   "livingDocGenerator": {
     "enabled": true,
-    "filePath": "TestExecution_{ProcessId}_{ThreadId}.json"
+    "filePath": "TestExecution.json"
   }
 }
