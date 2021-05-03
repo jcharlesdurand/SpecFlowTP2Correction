@@ -26,19 +26,19 @@ namespace CalculScrutinLibrary
         public List<Candidat> Candidats{ get; private set; }
         public bool EnAttenteProchainTour { get; private set; }
 
-        public void AjoutVote(string candidat)
+        public void AjoutVotes(string candidat, int nombreDeVoix)
         {
             if (this._scrutinOuvert)
             {
-                ResultatIndividuel resultat = this.Resultats.SingleOrDefault(_ => _.Candidat.Nom == candidat);
-                if (resultat != null)
+                ResultatIndividuel resultatCandidat = this.Resultats.SingleOrDefault(_ => _.Candidat.Nom == candidat);
+                if (resultatCandidat != null)
                 {
-                    resultat.AjoutUnVote();
-                    this._nombreDeVotesTotal += 1;
+                    resultatCandidat.AjoutVotes(nombreDeVoix);
+                    this._nombreDeVotesTotal += nombreDeVoix;
                 }
                 else
                 {
-                    this.VotesBlancsOuNuls += 1;
+                    this.VotesBlancsOuNuls += nombreDeVoix;
                 }
             }
         }

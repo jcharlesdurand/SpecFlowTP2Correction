@@ -24,7 +24,9 @@
 	| candidat 1 | Jan 1, 1999     |
 	| candidat 2 | Jun 15, 1995    |
 	And le tour de scrutin est ouvert
-	And le vote d'un electeur est "candidat 1"
+	And le vote des electeurs est le suivant
+	| Nom        | Nombre de vote |
+	| candidat 1 | 1              |
 	When le scrutin est clôturé
 	Then il y a un vainqueur
 	And "candidat 1" est désigné comme vainqueur
@@ -40,15 +42,11 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 		| candidat 2 | Jun 15, 1995    |
 		| candidat 3 | Jan 2, 1999     |
 	And le tour de scrutin est ouvert
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 3"
-	And le vote d'un electeur est "candidat 3"
-	And le vote d'un electeur est "candidat 3"
-	And le vote d'un electeur est "candidat 2"
-	And le vote d'un electeur est "candidat 2"
+	And le vote des electeurs est le suivant
+	| Nom        | Nombre de vote |
+	| candidat 1 | 4              |
+	| candidat 2 | 2              |
+	| candidat 3 | 3              |
 	When le scrutin est clôturé
 	Then il n'y a pas de vainqueur
 	And le résultat du scrutin est le suivant
@@ -62,10 +60,10 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 1 | 
 	| candidat 3 | 
 	Given le tour de scrutin est ouvert
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 3"
-	And le vote d'un electeur est "candidat 3"
-	And le vote d'un electeur est "candidat 3"
+	And le vote des electeurs est le suivant
+	| Nom        | Nombre de vote |
+	| candidat 1 | 1              |
+	| candidat 3 | 3              |
 	When le scrutin est clôturé
 	Then il y a un vainqueur
 	And "candidat 3" est désigné comme vainqueur
@@ -81,8 +79,10 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 		| candidat 2 | Jun 15, 1995    |
 		| candidat 3 | Jan 2, 1999     |
 	And le tour de scrutin est ouvert
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 3"
+	And le vote des electeurs est le suivant
+	| Nom        | Nombre de vote |
+	| candidat 1 | 1              |
+	| candidat 3 | 1              |
 	When le scrutin est clôturé
 	Then il n'y a pas de vainqueur
 	And le résultat du scrutin est le suivant
@@ -96,8 +96,10 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 1 | 
 	| candidat 3 | 
 	Given le tour de scrutin est ouvert
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 3"
+	And le vote des electeurs est le suivant
+	| Nom        | Nombre de vote |
+	| candidat 1 | 1              |
+	| candidat 3 | 1              |
 	When le scrutin est clôturé
 	Then le résultat du scrutin est le suivant
 	| Nom        | Nombre de vote | pourcentage |
@@ -113,13 +115,11 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 2 | Jun 15, 1995    |
 	| candidat 3 | Jan 2, 1999     |
 	And le tour de scrutin est ouvert
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est "candidat 3"
-	And le vote d'un electeur est "candidat 3"
-	And le vote d'un electeur est "candidat 2"
-	And le vote d'un electeur est "candidat 2"
-	And le vote d'un electeur est "candidat 2"
+	And le vote des electeurs est le suivant
+	| Nom        | Nombre de vote |
+	| candidat 1 | 2              |
+	| candidat 2 | 3              |
+	| candidat 3 | 2              |
 	When le scrutin est clôturé
 	Then il n'y a pas de vainqueur
 	And le résultat du scrutin est le suivant
@@ -139,9 +139,11 @@ Scenario: Scrutin majoritaire un électeur et un vainqueur, gestion des votes bl
 	| candidat 1 | Jan 1, 1999     |
 	| candidat 2 | Jun 15, 1995    |
 	And le tour de scrutin est ouvert
-	And le vote d'un electeur est "candidat 1"
-	And le vote d'un electeur est ""
-	And le vote d'un electeur est "adcve"
+	And le vote des electeurs est le suivant
+	| Nom        | Nombre de vote |
+	| candidat 1 | 1              |
+	|            | 1              |
+	| adcve      | 1              |
 	When le scrutin est clôturé
 	Then il y a un vainqueur
 	And "candidat 1" est désigné comme vainqueur

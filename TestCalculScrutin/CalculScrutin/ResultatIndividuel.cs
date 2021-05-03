@@ -13,9 +13,9 @@ namespace CalculScrutinLibrary
             this.Pourcentage = 0.0;
         }
 
-        internal void AjoutUnVote()
+        internal void AjoutVotes(int nombreDeVoix)
         {
-            this.NbVotes += 1;
+            this.NbVotes += nombreDeVoix;
         }
 
         internal void CalculPourcentage(int nbDeVotesTotal)

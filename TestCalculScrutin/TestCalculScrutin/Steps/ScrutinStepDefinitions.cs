@@ -34,16 +34,19 @@ namespace TestCalculScrutin.Steps
             this._calculScrutin = new CalculScrutin(candidats);
         }
 
-        [Given(@"le vote d'un electeur est ""(.*)""")]
-        public void GivenLeVoteDUnElecteurEst(string candidat)
-        {
-            this._calculScrutin.AjoutVote(candidat);
-        }
-
         [Given(@"le tour de scrutin est ouvert")]
         public void GivenLeScrutinEstOuvert()
         {
             this._calculScrutin.OuvertureDuScrutin();
+        }
+
+        [Given(@"le vote des electeurs est le suivant")]
+        public void GivenLeVoteDesElecteursEstLeSuivant(Table table)
+        {
+            foreach (TableRow row in table.Rows)
+            {
+                this._calculScrutin.AjoutVotes(row[0], int.Parse(row[1]));
+            }
         }
 
         [When(@"le scrutin est clôturé")]

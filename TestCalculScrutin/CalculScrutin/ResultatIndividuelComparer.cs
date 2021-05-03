@@ -10,9 +10,6 @@ namespace CalculScrutinLibrary
     {
         public override int Compare([AllowNull] ResultatIndividuel x, [AllowNull] ResultatIndividuel y)
         {
-            //if y > x return 1;
-            //if x > y return -1;
-
             if (x.Pourcentage == y.Pourcentage)
             {
                 TimeSpan age1 = DateTime.Now - x.Candidat.DateDeNaissance;

@@ -145,46 +145,52 @@ namespace TestCalculScrutin.Features
 #line 26
  testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote"});
+                table2.AddRow(new string[] {
+                            "candidat 1",
+                            "1"});
 #line 27
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 28
- testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 29
- testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table2, "And ");
 #line hidden
 #line 30
+ testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 31
+ testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 32
  testRunner.And("\"candidat 1\" est désigné comme vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "Nombre de vote",
                             "pourcentage"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "candidat 1",
                             "1",
                             "100"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "candidat 2",
                             "0",
                             "0"});
-#line 31
- testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table2, "And ");
+#line 33
+ testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table3, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et vainqueur" +
-            " au second tour", SourceLine=35)]
+            " au second tour", SourceLine=37)]
         public virtual void ScrutinMajoritaireDeuxElecteursPasDeVainqueurAuPremierTourEtVainqueurAuSecondTour()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et vainqueur" +
                     " au second tour", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 36
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -204,111 +210,44 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Nom",
-                            "DateDeNaissance"});
-                table3.AddRow(new string[] {
-                            "candidat 1",
-                            "Jan 1, 1999"});
-                table3.AddRow(new string[] {
-                            "candidat 2",
-                            "Jun 15, 1995"});
-                table3.AddRow(new string[] {
-                            "candidat 3",
-                            "Jan 2, 1999"});
-#line 37
- testRunner.Given("les candidats suivants", ((string)(null)), table3, "Given ");
-#line hidden
-#line 42
- testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 43
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 44
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 45
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 46
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 47
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 48
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 49
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 50
- testRunner.And("le vote d\'un electeur est \"candidat 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 51
- testRunner.And("le vote d\'un electeur est \"candidat 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 52
- testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 53
- testRunner.Then("il n\'y a pas de vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
-                            "Nombre de vote",
-                            "pourcentage"});
+                            "DateDeNaissance"});
                 table4.AddRow(new string[] {
                             "candidat 1",
-                            "4",
-                            "44.44444444444444"});
+                            "Jan 1, 1999"});
                 table4.AddRow(new string[] {
                             "candidat 2",
-                            "2",
-                            "22.22222222222222"});
+                            "Jun 15, 1995"});
                 table4.AddRow(new string[] {
                             "candidat 3",
-                            "3",
-                            "33.33333333333333"});
-#line 54
- testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table4, "And ");
+                            "Jan 2, 1999"});
+#line 39
+ testRunner.Given("les candidats suivants", ((string)(null)), table4, "Given ");
 #line hidden
-#line 59
- testRunner.And("un autre tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Nom"});
+                            "Nom",
+                            "Nombre de vote"});
                 table5.AddRow(new string[] {
-                            "candidat 1"});
+                            "candidat 1",
+                            "4"});
                 table5.AddRow(new string[] {
-                            "candidat 3"});
-#line 60
- testRunner.And("les candidats suivants sont qualifiés", ((string)(null)), table5, "And ");
+                            "candidat 2",
+                            "2"});
+                table5.AddRow(new string[] {
+                            "candidat 3",
+                            "3"});
+#line 45
+ testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table5, "And ");
 #line hidden
-#line 64
- testRunner.Given("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 65
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 66
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 67
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 68
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 69
+#line 50
  testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 70
- testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 71
- testRunner.And("\"candidat 3\" est désigné comme vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.Then("il n\'y a pas de vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
@@ -316,28 +255,83 @@ this.ScenarioInitialize(scenarioInfo);
                             "pourcentage"});
                 table6.AddRow(new string[] {
                             "candidat 1",
-                            "1",
-                            "25"});
+                            "4",
+                            "44.44444444444444"});
+                table6.AddRow(new string[] {
+                            "candidat 2",
+                            "2",
+                            "22.22222222222222"});
                 table6.AddRow(new string[] {
                             "candidat 3",
                             "3",
-                            "75"});
-#line 72
+                            "33.33333333333333"});
+#line 52
  testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table6, "And ");
+#line hidden
+#line 57
+ testRunner.And("un autre tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom"});
+                table7.AddRow(new string[] {
+                            "candidat 1"});
+                table7.AddRow(new string[] {
+                            "candidat 3"});
+#line 58
+ testRunner.And("les candidats suivants sont qualifiés", ((string)(null)), table7, "And ");
+#line hidden
+#line 62
+ testRunner.Given("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote"});
+                table8.AddRow(new string[] {
+                            "candidat 1",
+                            "1"});
+                table8.AddRow(new string[] {
+                            "candidat 3",
+                            "3"});
+#line 63
+ testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table8, "And ");
+#line hidden
+#line 67
+ testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 68
+ testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 69
+ testRunner.And("\"candidat 3\" est désigné comme vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote",
+                            "pourcentage"});
+                table9.AddRow(new string[] {
+                            "candidat 1",
+                            "1",
+                            "25"});
+                table9.AddRow(new string[] {
+                            "candidat 3",
+                            "3",
+                            "75"});
+#line 70
+ testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table9, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et pas de va" +
-            "inqueur au second tour", SourceLine=76)]
+            "inqueur au second tour", SourceLine=74)]
         public virtual void ScrutinMajoritaireDeuxElecteursPasDeVainqueurAuPremierTourEtPasDeVainqueurAuSecondTour()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et pas de va" +
                     "inqueur au second tour", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 77
+#line 75
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -357,29 +351,35 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "DateDeNaissance"});
-                table7.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "candidat 1",
                             "Jan 1, 1999"});
-                table7.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "candidat 2",
                             "Jun 15, 1995"});
-                table7.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "candidat 3",
                             "Jan 2, 1999"});
-#line 78
- testRunner.Given("les candidats suivants", ((string)(null)), table7, "Given ");
+#line 76
+ testRunner.Given("les candidats suivants", ((string)(null)), table10, "Given ");
 #line hidden
-#line 83
+#line 81
  testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 84
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 85
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote"});
+                table11.AddRow(new string[] {
+                            "candidat 1",
+                            "1"});
+                table11.AddRow(new string[] {
+                            "candidat 3",
+                            "1"});
+#line 82
+ testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table11, "And ");
 #line hidden
 #line 86
  testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -387,68 +387,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 87
  testRunner.Then("il n\'y a pas de vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "Nombre de vote",
                             "pourcentage"});
-                table8.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "candidat 1",
                             "1",
                             "50"});
-                table8.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "candidat 2",
                             "0",
                             "0"});
-                table8.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "candidat 3",
                             "1",
                             "50"});
 #line 88
- testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table8, "And ");
+ testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table12, "And ");
 #line hidden
 #line 93
  testRunner.And("un autre tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom"});
-                table9.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "candidat 1"});
-                table9.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "candidat 3"});
 #line 94
- testRunner.And("les candidats suivants sont qualifiés", ((string)(null)), table9, "And ");
+ testRunner.And("les candidats suivants sont qualifiés", ((string)(null)), table13, "And ");
 #line hidden
 #line 98
  testRunner.Given("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote"});
+                table14.AddRow(new string[] {
+                            "candidat 1",
+                            "1"});
+                table14.AddRow(new string[] {
+                            "candidat 3",
+                            "1"});
 #line 99
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table14, "And ");
 #line hidden
-#line 100
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 101
+#line 103
  testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "Nombre de vote",
                             "pourcentage"});
-                table10.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "candidat 1",
                             "1",
                             "50"});
-                table10.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "candidat 3",
                             "1",
                             "50"});
-#line 102
- testRunner.Then("le résultat du scrutin est le suivant", ((string)(null)), table10, "Then ");
+#line 104
+ testRunner.Then("le résultat du scrutin est le suivant", ((string)(null)), table15, "Then ");
 #line hidden
-#line 106
+#line 108
  testRunner.And("il n\'y a pas de vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 107
+#line 109
  testRunner.And("un autre tour de scrutin n\'est pas possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -456,14 +462,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité s" +
-            "ur les 2eme et 3eme candidat", SourceLine=108)]
+            "ur les 2eme et 3eme candidat", SourceLine=110)]
         public virtual void ScrutinMajoritaireDeuxElecteursPasDeVainqueurAuPremierTourEtEgaliteSurLes2EmeEt3EmeCandidat()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité s" +
                     "ur les 2eme et 3eme candidat", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 109
+#line 111
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -483,44 +489,38 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "DateDeNaissance"});
-                table11.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "candidat 1",
                             "Jan 1, 1999"});
-                table11.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "candidat 2",
                             "Jun 15, 1995"});
-                table11.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "candidat 3",
                             "Jan 2, 1999"});
-#line 110
- testRunner.Given("les candidats suivants", ((string)(null)), table11, "Given ");
-#line hidden
-#line 115
- testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 116
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.Given("les candidats suivants", ((string)(null)), table16, "Given ");
 #line hidden
 #line 117
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote"});
+                table17.AddRow(new string[] {
+                            "candidat 1",
+                            "2"});
+                table17.AddRow(new string[] {
+                            "candidat 2",
+                            "3"});
+                table17.AddRow(new string[] {
+                            "candidat 3",
+                            "2"});
 #line 118
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 119
- testRunner.And("le vote d\'un electeur est \"candidat 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 120
- testRunner.And("le vote d\'un electeur est \"candidat 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 121
- testRunner.And("le vote d\'un electeur est \"candidat 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 122
- testRunner.And("le vote d\'un electeur est \"candidat 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table17, "And ");
 #line hidden
 #line 123
  testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -528,36 +528,36 @@ this.ScenarioInitialize(scenarioInfo);
 #line 124
  testRunner.Then("il n\'y a pas de vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "Nombre de vote",
                             "pourcentage"});
-                table12.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "candidat 1",
                             "2",
                             "28.57142857142857"});
-                table12.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "candidat 2",
                             "3",
                             "42.857142857142854"});
-                table12.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "candidat 3",
                             "2",
                             "28.57142857142857"});
 #line 125
- testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table12, "And ");
+ testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table18, "And ");
 #line hidden
 #line 130
  testRunner.And("un autre tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom"});
-                table13.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "candidat 1"});
-                table13.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "candidat 2"});
 #line 131
- testRunner.And("les candidats suivants sont qualifiés", ((string)(null)), table13, "And ");
+ testRunner.And("les candidats suivants sont qualifiés", ((string)(null)), table19, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -591,55 +591,61 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "DateDeNaissance"});
-                table14.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "candidat 1",
                             "Jan 1, 1999"});
-                table14.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "candidat 2",
                             "Jun 15, 1995"});
 #line 137
- testRunner.Given("les candidats suivants", ((string)(null)), table14, "Given ");
+ testRunner.Given("les candidats suivants", ((string)(null)), table20, "Given ");
 #line hidden
 #line 141
  testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Nom",
+                            "Nombre de vote"});
+                table21.AddRow(new string[] {
+                            "candidat 1",
+                            "1"});
+                table21.AddRow(new string[] {
+                            "",
+                            "1"});
+                table21.AddRow(new string[] {
+                            "adcve",
+                            "1"});
 #line 142
- testRunner.And("le vote d\'un electeur est \"candidat 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 143
- testRunner.And("le vote d\'un electeur est \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 144
- testRunner.And("le vote d\'un electeur est \"adcve\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 145
- testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 146
- testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table21, "And ");
 #line hidden
 #line 147
+ testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 148
+ testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 149
  testRunner.And("\"candidat 1\" est désigné comme vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Nom",
                             "Nombre de vote",
                             "pourcentage"});
-                table15.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "candidat 1",
                             "1",
                             "100"});
-                table15.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "candidat 2",
                             "0",
                             "0"});
-#line 148
- testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table15, "And ");
+#line 150
+ testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table22, "And ");
 #line hidden
-#line 152
+#line 154
  testRunner.And("il y a 2 votes blancs ou nuls", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
