@@ -13,7 +13,7 @@
 
 	Evolution
 	- Gestion des égalités sur le 2ème et 3ème candidat sur un premier tour
-		- Règle métier choisie: en cas d'égalité au premier tour, le candidat le plus âgé est qualifié au deuxièeme tour
+		- Règle métier choisie: en cas d'égalité au premier tour, le candidat le plus âgé est qualifié au deuxième tour
 	- Gestion du vote blanc
 		- Règle métier choisie: les votes blancs ou nuls ne sont pas comptabilisés dans les suffrages exprimés
 								, mais ils sont décomptés à part et on veut pouvoir en connaître le nombre pour chaque tour 
