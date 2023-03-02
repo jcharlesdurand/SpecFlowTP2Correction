@@ -20,7 +20,7 @@ namespace CalculScrutinLibrary
 
         internal void CalculPourcentage(int nbDeVotesTotal)
         {
-            this.Pourcentage = (this.NbVotes / (double)nbDeVotesTotal) * 100.0;
+            this.Pourcentage = Math.Round((this.NbVotes / (double)nbDeVotesTotal) * 100.0, 2);
         }
 
         public Candidat Candidat { get; private set; }

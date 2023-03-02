@@ -50,10 +50,10 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	When le scrutin est clôturé
 	Then il n'y a pas de vainqueur
 	And le résultat du scrutin est le suivant
-	| Nom        | Nombre de vote | pourcentage       |
-	| candidat 1 | 4              | 44.44444444444444 |
-	| candidat 2 | 2              | 22.22222222222222 |
-	| candidat 3 | 3              | 33.33333333333333 |
+	| Nom        | Nombre de vote | pourcentage |
+	| candidat 1 | 4              | 44.44       |
+	| candidat 2 | 2              | 22.22       |
+	| candidat 3 | 3              | 33.33       |
 	And un autre tour de scrutin est possible
 	And les candidats suivants sont qualifiés
 	| Nom        | 
@@ -107,8 +107,9 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	| candidat 3 | 1              | 50          |
 	And il n'y a pas de vainqueur
 	And un autre tour de scrutin n'est pas possible
-
-	Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité sur les 2eme et 3eme candidat
+		
+	#bonus
+Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité sur les 2eme et 3eme candidat
 	Given les candidats suivants
 	| Nom        | DateDeNaissance |
 	| candidat 1 | Jan 1, 1999     |
@@ -123,10 +124,10 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	When le scrutin est clôturé
 	Then il n'y a pas de vainqueur
 	And le résultat du scrutin est le suivant
-	| Nom        | Nombre de vote | pourcentage        |
-	| candidat 1 | 2              | 28.57142857142857  |
-	| candidat 2 | 3              | 42.857142857142854 |
-	| candidat 3 | 2              | 28.57142857142857  |
+	| Nom        | Nombre de vote | pourcentage |
+	| candidat 1 | 2              | 28.57       |
+	| candidat 2 | 3              | 42.86       |
+	| candidat 3 | 2              | 28.57       |
 	And un autre tour de scrutin est possible
 	And les candidats suivants sont qualifiés
 	| Nom        | 
