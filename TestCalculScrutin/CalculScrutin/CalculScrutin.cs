@@ -70,11 +70,13 @@ namespace CalculScrutinLibrary
         }
         private void CalculDuResultat()
         {
+            //Calcul des résultats individuels
             foreach (ResultatIndividuel resultat in this.Resultats)
             {
                 resultat.CalculPourcentage(_nombreDeVotesTotal);
             }
 
+            //Désignation du vainqueur (si il y en a un)
             this.Vainqueur = this.Resultats.SingleOrDefault(_ => _.Pourcentage > 50.0);
             if (this.Vainqueur == null && this._tourDeScrutin == 1)
             {

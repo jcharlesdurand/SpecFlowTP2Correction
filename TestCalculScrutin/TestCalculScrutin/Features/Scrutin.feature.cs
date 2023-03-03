@@ -104,12 +104,12 @@ namespace TestCalculScrutin.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire un électeur et un vainqueur", SourceLine=20)]
-        public virtual void ScrutinMajoritaireUnElecteurEtUnVainqueur()
+        [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire, deux candidats un électeur et un vainqueur", SourceLine=20)]
+        public virtual void ScrutinMajoritaireDeuxCandidatsUnElecteurEtUnVainqueur()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire un électeur et un vainqueur", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire, deux candidats un électeur et un vainqueur", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 21
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -462,14 +462,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité s" +
-            "ur les 2eme et 3eme candidat", SourceLine=111)]
+            "ur les 2eme et 3eme candidat", SourceLine=115)]
         public virtual void ScrutinMajoritaireDeuxElecteursPasDeVainqueurAuPremierTourEtEgaliteSurLes2EmeEt3EmeCandidat()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité s" +
                     "ur les 2eme et 3eme candidat", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 112
+#line 116
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -501,10 +501,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table16.AddRow(new string[] {
                             "candidat 3",
                             "Jan 2, 1999"});
-#line 113
+#line 117
  testRunner.Given("les candidats suivants", ((string)(null)), table16, "Given ");
 #line hidden
-#line 118
+#line 122
  testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -519,13 +519,13 @@ this.ScenarioInitialize(scenarioInfo);
                 table17.AddRow(new string[] {
                             "candidat 3",
                             "2"});
-#line 119
+#line 123
  testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table17, "And ");
 #line hidden
-#line 124
+#line 128
  testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 125
+#line 129
  testRunner.Then("il n\'y a pas de vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -544,10 +544,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "candidat 3",
                             "2",
                             "28.57"});
-#line 126
+#line 130
  testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table18, "And ");
 #line hidden
-#line 131
+#line 135
  testRunner.And("un autre tour de scrutin est possible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -556,7 +556,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "candidat 1"});
                 table19.AddRow(new string[] {
                             "candidat 2"});
-#line 132
+#line 136
  testRunner.And("les candidats suivants sont qualifiés", ((string)(null)), table19, "And ");
 #line hidden
             }
@@ -564,14 +564,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [TechTalk.SpecRun.ScenarioAttribute("Scrutin majoritaire un électeur et un vainqueur, gestion des votes blancs ou nuls" +
-            "", SourceLine=136)]
+            "", SourceLine=140)]
         public virtual void ScrutinMajoritaireUnElecteurEtUnVainqueurGestionDesVotesBlancsOuNuls()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Scrutin majoritaire un électeur et un vainqueur, gestion des votes blancs ou nuls" +
                     "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 137
+#line 141
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -600,10 +600,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table20.AddRow(new string[] {
                             "candidat 2",
                             "Jun 15, 1995"});
-#line 138
+#line 142
  testRunner.Given("les candidats suivants", ((string)(null)), table20, "Given ");
 #line hidden
-#line 142
+#line 146
  testRunner.And("le tour de scrutin est ouvert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -618,16 +618,16 @@ this.ScenarioInitialize(scenarioInfo);
                 table21.AddRow(new string[] {
                             "adcve",
                             "1"});
-#line 143
+#line 147
  testRunner.And("le vote des electeurs est le suivant", ((string)(null)), table21, "And ");
 #line hidden
-#line 148
+#line 152
  testRunner.When("le scrutin est clôturé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 149
+#line 153
  testRunner.Then("il y a un vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 150
+#line 154
  testRunner.And("\"candidat 1\" est désigné comme vainqueur", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -642,10 +642,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "candidat 2",
                             "0",
                             "0"});
-#line 151
+#line 155
  testRunner.And("le résultat du scrutin est le suivant", ((string)(null)), table22, "And ");
 #line hidden
-#line 155
+#line 159
  testRunner.And("il y a 2 votes blancs ou nuls", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

@@ -18,7 +18,7 @@
 		- Règle métier choisie: les votes blancs ou nuls ne sont pas comptabilisés dans les suffrages exprimés
 								, mais ils sont décomptés à part et on veut pouvoir en connaître le nombre pour chaque tour 
 
- Scenario: Scrutin majoritaire un électeur et un vainqueur
+ Scenario: Scrutin majoritaire, deux candidats un électeur et un vainqueur
 	Given les candidats suivants
 	| Nom        | DateDeNaissance |
 	| candidat 1 | Jan 1, 1999     |
@@ -108,6 +108,10 @@ Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour 
 	And il n'y a pas de vainqueur
 	And un autre tour de scrutin n'est pas possible
 		
+
+
+
+
 	#bonus
 Scenario: Scrutin majoritaire deux électeurs, pas de vainqueur au premier tour et égalité sur les 2eme et 3eme candidat
 	Given les candidats suivants
